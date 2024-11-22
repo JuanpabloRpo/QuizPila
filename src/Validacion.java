@@ -20,7 +20,7 @@ public class Validacion {
                 return false;
             }
             // verificamos que no sea negativo
-            if (newDato < -1){
+            if (newDato < 0){
                 return false;
             }
 

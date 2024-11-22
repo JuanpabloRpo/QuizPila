@@ -18,7 +18,11 @@ public class Punto4 {
         Stack<String> pilaCaracter = new Stack<>();
 
         boolean flagMenu = true;
+        boolean newProces = true;
         while (flagMenu){
+            if (!newProces){
+                break;
+            }
             System.out.println("\n---------- PUNTO 4 ----------\n");
             System.out.println("Digite 1 para llenar la pila");
             System.out.println("Digite 2 para buscar un elemento dentro de la pila");
@@ -58,6 +62,16 @@ public class Punto4 {
 
                     System.out.println("La Posicion del caracter "+aBuscar+" es: "+posicion);
                     System.out.println(lineas);
+                    System.out.println("Proceso terminado");
+                    System.out.println(lineas);
+                    System.out.println("Desea inicar un nuevo proceso ? Digite 1 para si o 0 para no:");
+                    int newProc = Integer.parseInt(validacion.eleccionAValidarSinSobrepasar(1,cp.readLine(),1));
+                    if (newProc == 0){
+                        newProces = false;
+                    }else if (newProc == 1){
+                        newProces = true;
+                        pilaCaracter = new Stack<>();
+                    }
                     break;
                 case 3:
                     if (pilaCaracter.isEmpty()){
@@ -79,6 +93,7 @@ public class Punto4 {
         }
 
     }
+
     public Stack<String> llenarPila() throws IOException{
 
         Stack<String> pilaCaracter = new Stack<>();
